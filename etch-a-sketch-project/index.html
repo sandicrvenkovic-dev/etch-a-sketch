@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A colorful Flexbox sketch pad. Hover to draw, and build your own grid.">
+  <title>Etch-a-Sketch · A little room to draw</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">THE PIXEL PLAYGROUND</p>
+      <h1>Etch-a-Sketch<span>.</span></h1>
+      <p class="intro">A little room to draw. Move your mouse across the canvas and see where it takes you.</p>
+    </header>
+    <section class="sketchpad" aria-label="Sketch pad">
+      <div class="toolbar">
+        <button id="resize" type="button">New grid <span aria-hidden="true">↗</span></button>
+        <label for="mode">Ink
+          <select id="mode">
+            <option value="classic">Classic</option>
+            <option value="rainbow">Random RGB</option>
+            <option value="darken">Darken · 10 steps</option>
+            <option value="rainbow-darken">Random RGB + darken</option>
+          </select>
+        </label>
+        <button id="clear" class="secondary" type="button">Clear canvas</button>
+      </div>
+      <div id="grid" aria-label="Drawing canvas"></div>
+      <footer><span id="grid-size" role="status">16 × 16 grid</span><span>HOVER TO DRAW · TOUCH TO PAINT</span></footer>
+    </section>
+    <p class="hint">Make a mark. Make a mess. Start again.</p>
+  </main>
+</body>
+</html>
