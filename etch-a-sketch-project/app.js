@@ -3,6 +3,7 @@ const mode = document.querySelector('#mode');
 const sizeLabel = document.querySelector('#grid-size');
 const resizeButton = document.querySelector('#resize');
 const clearButton = document.querySelector('#clear');
+const resetButton = document.querySelector('#reset');
 let gridSize = 16;
 let lastTouchSquare = null;
 
@@ -92,9 +93,15 @@ function resetTouch() {
   lastTouchSquare = null;
 }
 
+
+function resetGrid() {
+  createGrid(16);
+}
+
 resizeButton.addEventListener('click', resizeGrid);
 clearButton.addEventListener('click', clearGrid);
 mode.addEventListener('change', clearGrid);
+resetButton.addEventListener('click', resetGrid);
 grid.addEventListener('touchstart', paintTouch);
 grid.addEventListener('touchmove', paintTouch);
 grid.addEventListener('touchend', resetTouch);
